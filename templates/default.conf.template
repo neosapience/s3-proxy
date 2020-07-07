@@ -7,6 +7,11 @@ server {
         return 200 "ok";
     }
 
+    location = / {
+        add_header Content-Type text/plain;
+        return 200 "ok";
+    }
+
     location / {
         proxy_pass http://${AWS_BUCKET}.s3.amazonaws.com;
     }
