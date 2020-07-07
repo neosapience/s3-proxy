@@ -12,7 +12,8 @@ server {
         return 200 "ok";
     }
 
-    location / {
+    location ${PATH_PREFIX} {
+        rewrite ^${PATH_PREFIX}(.*)$ /$1 break;
         proxy_pass http://${AWS_BUCKET}.s3.amazonaws.com;
     }
 }
