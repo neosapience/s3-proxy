@@ -1,0 +1,8 @@
+server {
+    listen 80;
+    charset utf-8;
+
+    location / {
+        proxy_pass http://${AWS_BUCKET}.s3.amazonaws.com;
+    }
+}
