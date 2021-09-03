@@ -1,7 +1,7 @@
 server {
     listen 80;
     charset utf-8;
- 
+
     location = /health {
         add_header Content-Type text/plain;
         return 200 "ok";
@@ -14,6 +14,6 @@ server {
 
     location ${PATH_PREFIX} {
         rewrite ^${PATH_PREFIX}(.*)$ /$1 break;
-        proxy_pass http://${AWS_BUCKET}.s3.amazonaws.com;
+        proxy_pass http://${AWS_S3_ENDPOINT};
     }
 }

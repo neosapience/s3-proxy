@@ -4,7 +4,7 @@
 
 |usecase|descript|required|
 |-|-|-|
-|AWS_BUCKET=my-aws-bucket|user aws bucket|true|
+|AWS_S3_ENDPOINT={bucket}.s3.{region}.amazonaws.com|your aws bucket endpoint|true|
 |PATH_PREFIX=/my-s3/|prefix. It must be starts/ends with slash|false|
 
 ### healthcheck:
